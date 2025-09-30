@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Order Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script/script3.js" defer></script>
+</head>
+<body>
+
+<main class="form-container">
+    <header class="header-image">
+        <img src="images/banner.jpg" alt="Company Banner">
+    </header>
+    <h2>New Order Entry Form</h2>
+    <form name="order-form" id="order-form">
+        
+        <div class="form-group">
+            <label for="ord-id">Order ID</label>
+            <input type="text" id="ord-id" name="Temporary_ORD_ID" readonly> 
+        </div>
+
+        <div class="form-group">
+            <label for="customer-name">Customer Name</label>
+            <input type="text" id="customer-name" name="CustomerName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile-no">Mobile No</label>
+            <input type="tel" id="mobile-no" name="MobileNo" pattern="[0-9]{10,15}" title="Mobile number must be 10-15 digits." required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="Address" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Item Amount (Rs)</label>
+            <input type="number" id="amount" name="Amount" step="0.01" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Order Date</label>
+            <input type="date" id="date" name="Date" required>
+        </div>
+
+        <button type="submit">Submit Order</button>
+    </form>
+</main>
+
+<div id="success-popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading">
+    <div class="popup-content">
+        <h3 id="popup-heading">✅ Order Submitted Successfully!</h3>
+        <p>Your data has been securely logged.</p>
+        <div class="order-display"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+</body>
+</html>
